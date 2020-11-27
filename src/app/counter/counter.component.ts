@@ -19,6 +19,9 @@ export class CounterComponent implements OnInit {
 
   increaseCount(): void {
     this.count++;
+    if (this.count >= 0) {
+      this.deleteButton.nativeElement.style.visibility = 'visible';
+    }
   }
 
   decreaseCount(): void {

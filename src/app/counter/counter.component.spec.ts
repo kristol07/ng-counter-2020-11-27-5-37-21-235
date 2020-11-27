@@ -49,4 +49,13 @@ describe('CounterComponent', () => {
     //then
     expect(component.deleteButton.nativeElement.style.visibility).toBe('hidden');
   });
+
+  it('should appear minus button when count is larger than or equal to 0', () => {
+    //given
+    component.count = -1;
+    //when
+    component.increaseCount();
+    //then
+    expect(component.deleteButton.nativeElement.style.visibility).toBe('visible');
+  });
 });
