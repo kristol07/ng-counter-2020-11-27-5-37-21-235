@@ -31,4 +31,15 @@ describe('CounterComponent', () => {
     //then
     expect(component.count).toBe(1);
   });
+
+  it('should decrease count when click minus button', () => {
+    //given
+    component.count = 0;
+    //when
+    component.decreaseCount();
+    //then
+    expect(component.count).toBe(-1);
+  });
+
+
 });
