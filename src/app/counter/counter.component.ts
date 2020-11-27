@@ -10,11 +10,13 @@ export class CounterComponent implements OnInit {
   count: number;
   deleteButtonVisibility: boolean;
   increaseButtonVisibility: boolean;
+  textLabelColor: string;
 
   constructor() {
     this.count = 0;
     this.deleteButtonVisibility = true;
     this.increaseButtonVisibility = true;
+    this.textLabelColor = 'white';
   }
 
   ngOnInit(): void {
@@ -37,6 +39,7 @@ export class CounterComponent implements OnInit {
     }
     if (this.count < 0) {
       this.deleteButtonVisibility = false;
+      this.textLabelColor = 'green';
     }
   }
 
