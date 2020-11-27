@@ -8,10 +8,12 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class CounterComponent implements OnInit {
 
   count: number;
+  deleteButtonVisibility: boolean;
   @ViewChild('deleteButton') deleteButton: ElementRef<HTMLButtonElement>;
 
   constructor() {
     this.count = 0;
+    this.deleteButtonVisibility = true;
   }
 
   ngOnInit(): void {
@@ -20,14 +22,14 @@ export class CounterComponent implements OnInit {
   increaseCount(): void {
     this.count++;
     if (this.count >= 0) {
-      this.deleteButton.nativeElement.style.visibility = 'visible';
+      this.deleteButtonVisibility = true;
     }
   }
 
   decreaseCount(): void {
     this.count--;
     if (this.count < 0) {
-      this.deleteButton.nativeElement.style.visibility = 'hidden';
+      this.deleteButtonVisibility = false;
     }
   }
 
