@@ -121,4 +121,16 @@ describe('CounterComponent', () => {
     // then
     expect(component.count).toBe(0);
   });
+
+  it('background color of text should be reset to white when reset button is clicked', () => {
+    // given
+    component.count = 10;
+    component.increaseCount();
+
+    // when
+    component.reset();
+
+    // then
+    expect(component.textLabelColor).toBe('white');
+  })
 });

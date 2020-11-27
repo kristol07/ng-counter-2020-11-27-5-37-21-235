@@ -36,6 +36,7 @@ export class CounterComponent implements OnInit {
 
   reset(): void {
     this.count = 0;
+    this.textLabelColor = 'white';
   }
 
   decreaseCount(): void {
