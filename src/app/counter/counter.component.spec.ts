@@ -41,5 +41,12 @@ describe('CounterComponent', () => {
     expect(component.count).toBe(-1);
   });
 
-
+  it('should hide minus button when count is less than 0', () => {
+    //given
+    component.count = 0;
+    //when
+    component.decreaseCount();
+    //then
+    expect(component.deleteButton.nativeElement.style.visibility).toBe('hidden');
+  });
 });

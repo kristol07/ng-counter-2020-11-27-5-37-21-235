@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CounterComponent implements OnInit {
 
   count: number;
+  @ViewChild('deleteButton') deleteButton: ElementRef<HTMLButtonElement>;
 
   constructor() {
     this.count = 0;
@@ -22,6 +23,9 @@ export class CounterComponent implements OnInit {
 
   decreaseCount(): void {
     this.count--;
+    if (this.count < 0) {
+      this.deleteButton.nativeElement.style.visibility = 'hidden';
+    }
   }
 
 }
