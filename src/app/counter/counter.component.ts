@@ -8,15 +8,15 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class CounterComponent implements OnInit {
 
   count: number;
-  deleteButtonVisibility: boolean;
+  decreaseButtonVisibility: boolean;
   increaseButtonVisibility: boolean;
   textLabelColor: string;
 
+  test = () => this.count < 0;
+
   constructor() {
     this.count = 0;
-    this.deleteButtonVisibility = true;
-    this.increaseButtonVisibility = true;
-    this.textLabelColor = 'white';
+    this.doCheck();
   }
 
   ngOnInit(): void {
@@ -24,31 +24,47 @@ export class CounterComponent implements OnInit {
 
   increaseCount(): void {
     this.count++;
-    if (this.count >= 0) {
-      this.deleteButtonVisibility = true;
-      this.textLabelColor = 'white';
-      if (this.count > 10) {
-        this.increaseButtonVisibility = false;
-        this.textLabelColor = 'red';
-      }
-    }
+    this.doCheck();
   }
 
   reset(): void {
     this.count = 0;
-    this.textLabelColor = 'white';
+    this.doCheck();
   }
 
   decreaseCount(): void {
     this.count--;
-    if (this.count <= 10) {
-      this.increaseButtonVisibility = true;
-      this.textLabelColor = 'white';
-    }
+    this.doCheck();
+  }
+
+  checkButtonVisibility(): void {
     if (this.count < 0) {
-      this.deleteButtonVisibility = false;
+      this.decreaseButtonVisibility = false;
+    }
+    else if (this.count > 10) {
+      this.increaseButtonVisibility = false;
+    }
+    else {
+      this.increaseButtonVisibility = true;
+      this.decreaseButtonVisibility = true;
+    }
+  }
+
+  checkTextColor(): void {
+    if (this.count < 0) {
       this.textLabelColor = 'green';
     }
+    else if (this.count > 10) {
+      this.textLabelColor = 'red';
+    }
+    else {
+      this.textLabelColor = 'white';
+    }
+  }
+
+  doCheck(): void {
+    this.checkTextColor();
+    this.checkButtonVisibility();
   }
 
 }

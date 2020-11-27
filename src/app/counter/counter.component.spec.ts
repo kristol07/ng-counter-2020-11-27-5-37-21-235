@@ -47,7 +47,7 @@ describe('CounterComponent', () => {
     // when
     component.decreaseCount();
     // then
-    expect(component.deleteButtonVisibility).toBeFalse();
+    expect(component.decreaseButtonVisibility).toBeFalse();
   });
 
   it('should appear minus button when count is larger than or equal to 0', () => {
@@ -56,7 +56,7 @@ describe('CounterComponent', () => {
     // when
     component.increaseCount();
     // then
-    expect(component.deleteButtonVisibility).toBeTrue();
+    expect(component.decreaseButtonVisibility).toBeTrue();
   });
 
   it('should hide increase button when count is larger than 10', () => {
@@ -132,5 +132,5 @@ describe('CounterComponent', () => {
 
     // then
     expect(component.textLabelColor).toBe('white');
-  })
+  });
 });
