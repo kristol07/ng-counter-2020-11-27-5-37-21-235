@@ -1,0 +1,7 @@
+
+  <p>
+    <button (click)="increaseCount()" *ngIf="increaseButtonVisibility">+</button>
+    <span [style.background-color]="textLabelColor">number: {{count}}</span>
+    <button (click)="decreaseCount()" *ngIf="decreaseButtonVisibility">-</button>
+    <button (click)="reset()">reset</button>
+  </p>
