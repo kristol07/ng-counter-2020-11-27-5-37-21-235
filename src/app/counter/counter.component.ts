@@ -9,11 +9,12 @@ export class CounterComponent implements OnInit {
 
   count: number;
   deleteButtonVisibility: boolean;
-  @ViewChild('deleteButton') deleteButton: ElementRef<HTMLButtonElement>;
+  increaseButtonVisibility: boolean;
 
   constructor() {
     this.count = 0;
     this.deleteButtonVisibility = true;
+    this.increaseButtonVisibility = true;
   }
 
   ngOnInit(): void {
@@ -23,6 +24,9 @@ export class CounterComponent implements OnInit {
     this.count++;
     if (this.count >= 0) {
       this.deleteButtonVisibility = true;
+      if (this.count > 10) {
+        this.increaseButtonVisibility = false;
+      }
     }
   }
 

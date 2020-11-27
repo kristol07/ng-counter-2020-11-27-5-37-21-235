@@ -1,6 +1,6 @@
 
   <p>
-    <button (click)="increaseCount()">+</button>
+    <button (click)="increaseCount()" *ngIf="increaseButtonVisibility">+</button>
     <label> number: {{count}}</label>
     <button (click)="decreaseCount()" #deleteButton *ngIf="deleteButtonVisibility">-</button>
   </p>

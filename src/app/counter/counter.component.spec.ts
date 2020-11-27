@@ -58,4 +58,13 @@ describe('CounterComponent', () => {
     //then
     expect(component.deleteButtonVisibility).toBeTrue();
   });
+
+  it('should hide increase button when count is larger than 10', () => {
+    //given
+    component.count = 10;
+    //when
+    component.increaseCount();
+    //then
+    expect(component.increaseButtonVisibility).toBeFalse();
+  });
 });
