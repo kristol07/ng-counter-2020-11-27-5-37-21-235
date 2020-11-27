@@ -32,6 +32,9 @@ export class CounterComponent implements OnInit {
 
   decreaseCount(): void {
     this.count--;
+    if (this.count <= 10) {
+      this.increaseButtonVisibility = true;
+    }
     if (this.count < 0) {
       this.deleteButtonVisibility = false;
     }

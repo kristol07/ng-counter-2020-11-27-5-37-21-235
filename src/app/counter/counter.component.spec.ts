@@ -67,4 +67,13 @@ describe('CounterComponent', () => {
     //then
     expect(component.increaseButtonVisibility).toBeFalse();
   });
+
+  it('should appear increase button when count <= 10', () => {
+    //given
+    component.count = 11;
+    //when
+    component.decreaseCount();
+    //then
+    expect(component.increaseButtonVisibility).toBeTrue();
+  });
 });
