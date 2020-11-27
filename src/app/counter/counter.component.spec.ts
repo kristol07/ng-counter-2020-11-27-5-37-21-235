@@ -94,4 +94,22 @@ describe('CounterComponent', () => {
     // then
     expect(component.textLabelColor).toBe('red');
   });
+
+  it('background color of text should be white when count > 0', () => {
+    // given
+    component.count = 0;
+    // when
+    component.increaseCount();
+    // then
+    expect(component.textLabelColor).toBe('white');
+  });
+
+  it('background color of text should be white when count <= 10', () => {
+    // given
+    component.count = 11;
+    // when
+    component.decreaseCount();
+    // then
+    expect(component.textLabelColor).toBe('white');
+  });
 });
