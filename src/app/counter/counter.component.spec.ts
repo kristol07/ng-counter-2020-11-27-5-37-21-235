@@ -85,4 +85,13 @@ describe('CounterComponent', () => {
     // then
     expect(component.textLabelColor).toBe('green');
   });
+
+  it('background color of text should change to green when count > 10', () => {
+    // given
+    component.count = 10;
+    // when
+    component.increaseCount();
+    // then
+    expect(component.textLabelColor).toBe('red');
+  });
 });

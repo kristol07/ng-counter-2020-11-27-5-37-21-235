@@ -28,6 +28,7 @@ export class CounterComponent implements OnInit {
       this.deleteButtonVisibility = true;
       if (this.count > 10) {
         this.increaseButtonVisibility = false;
+        this.textLabelColor = 'red';
       }
     }
   }
