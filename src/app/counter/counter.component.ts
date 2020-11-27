@@ -34,6 +34,10 @@ export class CounterComponent implements OnInit {
     }
   }
 
+  reset(): void {
+    this.count = 0;
+  }
+
   decreaseCount(): void {
     this.count--;
     if (this.count <= 10) {

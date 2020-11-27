@@ -112,4 +112,13 @@ describe('CounterComponent', () => {
     // then
     expect(component.textLabelColor).toBe('white');
   });
+
+  it('number of text should be set to 0 when click reset button', () => {
+    // given
+    component.count = 11;
+    // when
+    component.reset();
+    // then
+    expect(component.count).toBe(0);
+  });
 });
